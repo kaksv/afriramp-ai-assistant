@@ -1,0 +1,117 @@
+:root {
+  color-scheme: dark;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --background: oklch(0.189 0.021 237.4);
+  --foreground: oklch(0.966 0.007 208.8);
+  --card: oklch(0.246 0.028 234.1);
+  --card-foreground: oklch(0.966 0.007 208.8);
+  --primary: oklch(0.784 0.096 207.4);
+  --primary-foreground: oklch(0.208 0.028 216.3);
+  --primary-soft: oklch(0.873 0.063 204.8);
+  --secondary: oklch(0.285 0.030 229.5);
+  --secondary-foreground: oklch(0.966 0.007 208.8);
+  --muted: oklch(0.273 0.030 229.7);
+  --muted-foreground: oklch(0.837 0.018 214.4);
+  --accent: oklch(0.325 0.033 221.2);
+  --accent-foreground: oklch(0.966 0.007 208.8);
+  --destructive: oklch(0.711 0.166 22.2);
+  --destructive-foreground: oklch(0.189 0.021 237.4);
+  --success: oklch(0.76 0.15 158);
+  --border: oklch(0.394 0.029 220.4);
+  --input: oklch(0.246 0.028 234.1);
+  --ring: oklch(0.784 0.096 207.4);
+  --radius: 0.625rem;
+
+  --font-sans: "IBM Plex Sans";
+  --font-mono: "IBM Plex Mono";
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --background: oklch(0.981 0.007 208.8);
+  --foreground: oklch(0.246 0.021 222.3);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.246 0.021 222.3);
+  --primary: oklch(0.517 0.088 211.6);
+  --primary-foreground: oklch(1 0 0);
+  --primary-soft: oklch(0.735 0.078 204.1);
+  --secondary: oklch(0.955 0.009 205.9);
+  --secondary-foreground: oklch(0.246 0.021 222.3);
+  --muted: oklch(0.950 0.008 207.1);
+  --muted-foreground: oklch(0.439 0.025 215.6);
+  --accent: oklch(0.942 0.020 204.4);
+  --accent-foreground: oklch(0.246 0.021 222.3);
+  --destructive: oklch(0.500 0.182 29.5);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.49 0.12 158);
+  --border: oklch(0.844 0.018 214.4);
+  --input: oklch(0.960 0.011 204.1);
+  --ring: oklch(0.517 0.088 211.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: color-mix(in oklch, var(--primary) 36%, transparent);
+  color: var(--foreground);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
